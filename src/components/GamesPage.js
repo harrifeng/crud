@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Games List from './GamesList';
+import GamesList from './GamesList';
 
 class GamesPage extends Component {
   render() {
