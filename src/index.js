@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
+import GamesPage from './components/GamesPage';
 import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -24,11 +25,11 @@ ReactDOM.render(
       <div className="ui container">
         <div className="ui three itme menu">
           <NavLink className="item" to="/">Home</NavLink>
-          <NavLink className="item" to="/">Games</NavLink>
+          <NavLink className="item" to="/games">Games</NavLink>
           <NavLink className="item" to="/">Add New Game</NavLink>
         </div>
-        <Route path="/" component={ App } />
-        <Route path="/games" component={ App } />
+        <Route exact path="/" component={ App } />
+        <Route path="/games" component={ GamesPage } />
        </div>
     </Router>
   </Provider>,
