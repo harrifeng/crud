@@ -2,8 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import GamesList from './GamesList';
+import {fetchGames} from '../actions';
 
 class GamesPage extends Component {
+  componentDidMount() {
+    this.props.fetchGames();
+  }
+
   render() {
     return (
       <div>
@@ -14,7 +19,8 @@ class GamesPage extends Component {
 }
 
 GamesPage.propTypes = {
-  games: PropTypes.array.isReuired
+  games: PropTypes.array.isRequired,
+  fetchGames: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
@@ -23,4 +29,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(GamesPage);
+export default connect(mapStateToProps, {fetchGames})(GamesPage);
