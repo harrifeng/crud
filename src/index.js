@@ -19,7 +19,14 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <div className="ui container">
+      <div className="ui three itme menu">
+        <a href="#" className="item">Home</a>
+        <a href="#" className="item">Games</a>
+        <a href="#" className="item">Add New Game</a>
+      </div>
+      <App />
+    </div>
   </Provider>,
   document.getElementById('root')
 );
