@@ -8,6 +8,7 @@ import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import logger from 'redux-logger'
+import { BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
 
 
 const store = createStore(
@@ -19,14 +20,17 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <div className="ui container">
-      <div className="ui three itme menu">
-        <a href="#" className="item">Home</a>
-        <a href="#" className="item">Games</a>
-        <a href="#" className="item">Add New Game</a>
-      </div>
-      <App />
-    </div>
+    <Router>
+      <div className="ui container">
+        <div className="ui three itme menu">
+          <NavLink className="item" to="/">Home</NavLink>
+          <NavLink className="item" to="/">Games</NavLink>
+          <NavLink className="item" to="/">Add New Game</NavLink>
+        </div>
+        <Route path="/" component={ App } />
+        <Route path="/games" component={ App } />
+       </div>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
