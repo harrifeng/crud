@@ -1,6 +1,6 @@
 export const setGames = (games) => {
   return {
-    type: 'SET_GAMEs',
+    type: 'SET_GAMES',
     games
   }
 };
@@ -11,4 +11,4 @@ export const fetchGames = () => {
       .then(res => res.json())
       .then(data => dispatch(setGames(data.games)))
   }
-}
+};
